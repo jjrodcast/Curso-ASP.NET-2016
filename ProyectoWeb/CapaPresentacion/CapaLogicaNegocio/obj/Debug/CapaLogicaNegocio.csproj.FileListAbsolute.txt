@@ -1,0 +1,9 @@
+C:\Users\JorgePC\Desktop\CapaPresentacion\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.dll
+C:\Users\JorgePC\Desktop\CapaPresentacion\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.pdb
+C:\Users\JorgePC\Desktop\CapaPresentacion\CapaLogicaNegocio\bin\Debug\CapaAccesoDatos.dll
+C:\Users\JorgePC\Desktop\CapaPresentacion\CapaLogicaNegocio\bin\Debug\CapaEntidades.dll
+C:\Users\JorgePC\Desktop\CapaPresentacion\CapaLogicaNegocio\bin\Debug\CapaAccesoDatos.pdb
+C:\Users\JorgePC\Desktop\CapaPresentacion\CapaLogicaNegocio\bin\Debug\CapaEntidades.pdb
+C:\Users\JorgePC\Desktop\CapaPresentacion\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.csprojResolveAssemblyReference.cache
+C:\Users\JorgePC\Desktop\CapaPresentacion\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.dll
+C:\Users\JorgePC\Desktop\CapaPresentacion\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.pdb
