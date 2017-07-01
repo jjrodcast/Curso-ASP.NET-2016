@@ -150,6 +150,19 @@
                             <span>Reserva de Citas</span>
                         </a>
                     </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-th"></i>
+                            <span>Horarios</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="GestionarHorarioAtencion.aspx"><i class="fa fa-angle-double-right"></i>Horarios Médicos</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
                 </ul>
             </section>
         </aside>

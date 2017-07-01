@@ -221,6 +221,7 @@
     <Content Include="css\timepicker\bootstrap-timepicker.css" />
     <Content Include="css\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GestionarHorarioAtencion.aspx" />
     <Content Include="GestionarPaciente.aspx" />
     <Content Include="img\ajax-loader.gif" />
     <Content Include="img\ajax-loader1.gif" />
@@ -264,6 +265,7 @@
     <Content Include="js\AdminLTE\dashboard.js" />
     <Content Include="js\AdminLTE\demo.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\horariosmedico.js" />
     <Content Include="js\jquery-3.1.0.min.js" />
     <Content Include="js\jquery-ui.min.js" />
     <Content Include="js\jquery.min.js" />
@@ -382,6 +384,7 @@
     <Content Include="js\plugins\misc\jquery.placeholder.js" />
     <Content Include="js\plugins\misc\modernizr.min.js" />
     <Content Include="js\plugins\misc\respond.min.js" />
+    <Content Include="js\plugins\moment\moment.min.js" />
     <Content Include="js\plugins\morris\morris.js" />
     <Content Include="js\plugins\morris\morris.min.js" />
     <Content Include="js\plugins\slimScroll\jquery.slimscroll.js" />
@@ -402,6 +405,13 @@
     </Compile>
     <Compile Include="Custom\CustomMembershipProvider.cs" />
     <Compile Include="Custom\SessionManager.cs" />
+    <Compile Include="GestionarHorarioAtencion.aspx.cs">
+      <DependentUpon>GestionarHorarioAtencion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarHorarioAtencion.aspx.designer.cs">
+      <DependentUpon>GestionarHorarioAtencion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionarPaciente.aspx.cs">
       <DependentUpon>GestionarPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

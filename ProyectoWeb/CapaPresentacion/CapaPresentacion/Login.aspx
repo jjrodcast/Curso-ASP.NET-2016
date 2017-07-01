@@ -28,7 +28,7 @@
                     <div class="footer">
                         <asp:Button ID="btnIngresar" CommandName="Login" runat="server" Text="Inicar Sesión" CssClass="btn bg-olive btn-block" />
                     </div>
-                </LayoutTemplate>
+              </LayoutTemplate>
             </asp:Login>
         </div>
     </form>

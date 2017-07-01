@@ -11,14 +11,12 @@
     return template;
 }
 
-
 function addRow() {
     var template = templateRow();
     for (var i = 0; i < 10; i++) {
         $("#tbl_body_table").append(template);
     }
 }
-
 
 var tabla, data;
 
@@ -36,8 +34,10 @@ function addRowDT(data) {
             {"bSortable" : false}
         ]
     });
+
     tabla.fnClearTable();
-    for(var i = 0; i < data.length; i++) {
+
+    for (var i = 0; i < data.length; i++) {
         tabla.fnAddData([
             data[i].IdPaciente,
             data[i].Nombres,
