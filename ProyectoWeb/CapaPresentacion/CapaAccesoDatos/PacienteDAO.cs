@@ -136,7 +136,6 @@ namespace CapaAccesoDatos
             return ok;
         }
 
-
         public bool Eliminar(int id)
         {
             SqlConnection conexion = null;
@@ -166,6 +165,49 @@ namespace CapaAccesoDatos
                 conexion.Close();
             }
             return ok;
+        }
+
+        public Paciente BuscarPacienteDNI(string dni)
+        {
+            SqlConnection conex = null;
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            Paciente objPaciente = null; 
+
+            try
+            {
+                conex = Conexion.getInstance().ConexionBD();
+                cmd = new SqlCommand("spBuscarPacienteDNI", conex);
+                cmd.Parameters.AddWithValue("@prmDni", dni);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                conex.Open();
+                dr = cmd.ExecuteReader();
+
+                if(dr.Read())
+                {
+                    objPaciente = new Paciente
+                    {
+                        IdPaciente = Convert.ToInt32(dr["idPaciente"].ToString()),
+                        Nombres = dr["Nombres"].ToString(),
+                        ApPaterno = dr["ApPaterno"].ToString(),
+                        ApMaterno = dr["ApMaterno"].ToString(),
+                        Telefono = dr["Telefono"].ToString(),
+                        Edad = Convert.ToInt32(dr["Edad"].ToString()),
+                        Sexo = Convert.ToChar(dr["Sexo"].ToString())
+                    };
+                }
+            }
+            catch(Exception ex)
+            {
+                objPaciente = null;
+                throw ex;
+            }
+            finally
+            {
+                conex.Close();
+            }
+            return objPaciente;
         }
     }
 }

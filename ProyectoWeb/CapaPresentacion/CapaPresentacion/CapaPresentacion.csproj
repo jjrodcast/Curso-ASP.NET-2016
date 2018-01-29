@@ -223,6 +223,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="GestionarHorarioAtencion.aspx" />
     <Content Include="GestionarPaciente.aspx" />
+    <Content Include="GestionarReservaCitas.aspx" />
     <Content Include="img\ajax-loader.gif" />
     <Content Include="img\ajax-loader1.gif" />
     <Content Include="img\avatar.png" />
@@ -393,6 +394,7 @@
     <Content Include="js\plugins\sparkline\jquery.sparkline.min.js" />
     <Content Include="js\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="js\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="js\reserva.js" />
     <Content Include="Login.aspx" />
     <Content Include="PanelGeneral.aspx" />
     <Content Include="Web.config">
@@ -418,6 +420,13 @@
     </Compile>
     <Compile Include="GestionarPaciente.aspx.designer.cs">
       <DependentUpon>GestionarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarReservaCitas.aspx.cs">
+      <DependentUpon>GestionarReservaCitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarReservaCitas.aspx.designer.cs">
+      <DependentUpon>GestionarReservaCitas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.Master.cs">
       <DependentUpon>Home.Master</DependentUpon>

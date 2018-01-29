@@ -46,5 +46,41 @@ namespace CapaLogicaNegocio
                 throw ex;
             }
         }
+
+        public List<HorarioAtencion> ListarHorarioReservas(Int32 IdEspecialidad, DateTime Fecha)
+        {
+            try
+            {
+                return HorarioAtencionDAO.getInstance().ListarHorarioReservas(IdEspecialidad, Fecha);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Eliminar(int idHorarioAtencion)
+        {
+            try
+            {
+                return HorarioAtencionDAO.getInstance().Eliminar(idHorarioAtencion);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Editar(HorarioAtencion objHorario)
+        {
+            try
+            {
+                return HorarioAtencionDAO.getInstance().Editar(objHorario);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

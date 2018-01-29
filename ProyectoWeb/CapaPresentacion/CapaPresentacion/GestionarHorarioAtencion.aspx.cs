@@ -50,5 +50,39 @@ namespace CapaPresentacion
 
             return HorarioAtencionLN.getInstance().Listar(idMedico);
         }
+
+        [WebMethod]
+        public static bool EliminarHorarioAtencion(String id)
+        {
+            Int32 idHorarioAtencion = Convert.ToInt32(id);
+
+            return HorarioAtencionLN.getInstance().Eliminar(idHorarioAtencion);
+        }
+
+        [WebMethod]
+        public static bool ActualizarHorarioAtencion(String idmedico, String idhorario, String fecha, String hora)
+        {
+
+            Int32 idMedico = Convert.ToInt32(idmedico);
+            Int32 idHorario = Convert.ToInt32(idhorario);
+
+            // crear un objeto HorarioAtencion
+            HorarioAtencion objHorario = new HorarioAtencion()
+            {
+                IdHorarioAtencion = idHorario,
+                Medico = new Medico()
+                {
+                    IdMedico = idMedico
+                },
+                Fecha = Convert.ToDateTime(fecha),
+                Hora = new Hora()
+                {
+                    hora = hora
+                }
+            };
+
+            return HorarioAtencionLN.getInstance().Editar(objHorario);
+        }
+
     }
 }

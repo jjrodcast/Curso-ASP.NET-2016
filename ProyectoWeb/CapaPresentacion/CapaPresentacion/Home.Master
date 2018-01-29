@@ -127,7 +127,8 @@
                         <img src="img/user.jpg" class="img-circle" alt="User Image" />
                     </div>
                     <div class="pull-left info">
-                        <p>Bienvenido sr(a)<asp:Label runat="server" ID="txtUser"></asp:Label>
+                        <p>
+                            Bienvenido sr(a)<asp:Label runat="server" ID="txtUser"></asp:Label>
                         </p>
                     </div>
                 </div>
@@ -145,7 +146,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="GestionarReservaCitas.aspx">
                             <i class="fa fa-th"></i>
                             <span>Reserva de Citas</span>
                         </a>
@@ -162,7 +163,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+
                 </ul>
             </section>
         </aside>
@@ -174,10 +175,10 @@
             </section>
             <section class="content">
                 <form id="form1" runat="server">
-                    <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="300">
+                    <asp:ScriptManager ID="scriptManager" runat="server" AsyncPostBackTimeout="300">
                     </asp:ScriptManager>
                     <div>
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <asp:ContentPlaceHolder ID="contentBody" runat="server">
                             <!-- CARGAR EL DISEÑO DE LA PAGINA QUE HEREDA DE MASTER PAGE-->
                         </asp:ContentPlaceHolder>
                     </div>

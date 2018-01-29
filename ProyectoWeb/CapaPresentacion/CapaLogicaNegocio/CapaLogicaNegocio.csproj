@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmpleadoLN.cs" />
+    <Compile Include="EspecialidadLN.cs" />
     <Compile Include="HorarioAtencionLN.cs" />
     <Compile Include="MedicoLN.cs" />
     <Compile Include="PacienteLN.cs" />
