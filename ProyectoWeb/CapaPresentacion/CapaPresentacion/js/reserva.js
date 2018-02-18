@@ -1,4 +1,6 @@
-﻿$("#btnBuscar").on('click', function (e) {
+﻿$("[data-mask]").inputmask();
+
+$("#btnBuscar").on('click', function (e) {
     e.preventDefault();
 
     var dni = $("#txtDNI").val();
@@ -6,7 +8,6 @@
     searchPacienteDni(dni);
 
 });
-
 
 function searchPacienteDni(dni) {
 

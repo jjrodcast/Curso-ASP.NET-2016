@@ -87,7 +87,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group" style="text-align: center">
                                             <br />
-                                            <asp:Button ID="btnBuscarHorario" runat="server" CssClass="btn btn-danger" Text="Buscar" />
+                                            <asp:Button ID="btnBuscarHorario" runat="server" CssClass="btn btn-danger" Text="Buscar" OnClick="btnBuscarHorario_Click" />
                                         </div>
                                     </div>
                                 </div>
@@ -117,11 +117,18 @@
                                                         <asp:Label ID="lblMedicoHeader" runat="server" Text="Médico"></asp:Label>
                                                     </HeaderTemplate>
                                                     <ItemTemplate>
+                                                        <asp:HiddenField ID="hfIdMedico" runat="server" Value='<%#Eval("Medico.IdMedico") %>' />
                                                         <asp:Label ID="lblMedico" runat="server" Text='<%#Eval("Medico.Nombre") %>'></asp:Label>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>
                                         </asp:GridView>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <asp:Button ID="btnReservarCita" runat="server" Text="Reservar Cita" CssClass="btn btn-primary" OnClick="btnReservarCita_Click" />
                                     </div>
                                 </div>
                             </div>
@@ -130,10 +137,14 @@
                 </div>
 
             </section>
-            <input id="idPaciente" type="hidden" />
+            <%--<input id="idPaciente" type="hidden"  />--%>
+            <asp:HiddenField ID="idPaciente" runat="server" />
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+    <script src="js/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="js/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="js/plugins/input-mask/jquery.inputmask.extensions.js"></script>
     <script src="js/reserva.js"></script>
 </asp:Content>

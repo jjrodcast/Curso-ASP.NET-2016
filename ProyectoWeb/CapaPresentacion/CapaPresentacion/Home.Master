@@ -175,7 +175,7 @@
             </section>
             <section class="content">
                 <form id="form1" runat="server">
-                    <asp:ScriptManager ID="scriptManager" runat="server" AsyncPostBackTimeout="300">
+                    <asp:ScriptManager ID="scriptManager" runat="server">
                     </asp:ScriptManager>
                     <div>
                         <asp:ContentPlaceHolder ID="contentBody" runat="server">

@@ -16,16 +16,30 @@ namespace CapaPresentacion
         {
             if (!IsPostBack)
             {
-                LlenarGridView();
                 LlenarEspecialidades();
             }
+
         }
 
-        private void LlenarGridView()
+        private void LlenarGridViewHorariosAtencion()
         {
-            String fecha = "29/01/2018";
+
+            if (txtFechaAtencion.Text.Equals(string.Empty))
+            {
+                Response.Write("<script>alert('No ha ingresado una fecha valida')</script>");
+                return;
+            }
+
+            // obtenemos fecha
+            String fecha = txtFechaAtencion.Text;
             DateTime fechaBusqueda = Convert.ToDateTime(fecha);
-            List<HorarioAtencion> Lista = HorarioAtencionLN.getInstance().ListarHorarioReservas(1, fechaBusqueda);
+
+            // obtenemos el idEspecialidad
+            Int32 idEspecialidad = Convert.ToInt32(ddlEspecialidad.SelectedValue);
+
+            
+
+            List<HorarioAtencion> Lista = HorarioAtencionLN.getInstance().ListarHorarioReservas(idEspecialidad, fechaBusqueda);
             grdHorariosAtencion.DataSource = Lista;
             grdHorariosAtencion.DataBind();
         }
@@ -45,6 +59,71 @@ namespace CapaPresentacion
         {
             return PacienteLN.getInstance().BuscarPacienteDNI(dni);
         }
+
+        protected void btnBuscarHorario_Click(object sender, EventArgs e)
+        {
+            LlenarGridViewHorariosAtencion();
+        }
+
+        protected void btnReservarCita_Click(object sender, EventArgs e)
+        {
+            // ejecutar el guardado de la reserva
+            bool isSelected = HorarioAtencionSelccionado();
+
+            if (!idPaciente.Value.Equals(string.Empty) && isSelected)
+            {
+                Cita objCita = ObtenerCitaSeleccionada();
+
+                bool response = CitaLN.getInstance().RegistrarCita(objCita);
+
+                if (response)
+                {
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Alerta", "<script>alert('Cita registrada correctamente.')</script>", false);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Alerta", "<script>alert('Error al registrar la cita.')</script>", false);
+                }
+            }
+        }
+
+        private bool HorarioAtencionSelccionado()
+        {
+            foreach (GridViewRow row in grdHorariosAtencion.Rows)
+            {
+                CheckBox chkHorario = (row.FindControl("chkSeleccionar") as CheckBox);
+
+                if (chkHorario.Checked)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private Cita ObtenerCitaSeleccionada() 
+        {
+            Cita objCita = new Cita();
+
+             foreach (GridViewRow row in grdHorariosAtencion.Rows)
+            {
+                CheckBox chkHorario = (row.FindControl("chkSeleccionar") as CheckBox);
+
+                if (chkHorario.Checked)
+                {
+                    objCita.Hora = (row.FindControl("lblHora") as Label).Text;
+                    objCita.FechaReserva = DateTime.Now;
+                    objCita.Paciente.IdPaciente = Convert.ToInt32(idPaciente.Value);
+
+                    string idMedico = (row.FindControl("hfIdMedico") as HiddenField).Value;
+                    objCita.Medico.IdMedico = Convert.ToInt32(idMedico);
+
+                    break;
+                }
+             }
+            return objCita;
+        }
+
 
     }
 }
