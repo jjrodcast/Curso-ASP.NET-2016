@@ -34,5 +34,17 @@ namespace CapaLogicaNegocio
                 throw;
             }
         }
+
+        public List<Cita> ListarCitas()
+        {
+            try
+            {
+                return CitaDAO.getInstance().ListarCitas();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
