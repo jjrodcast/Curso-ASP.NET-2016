@@ -11,7 +11,7 @@
     </section>
     <section class="content invoice">
         <!-- LISTA DE LAS CITAS MÉDICAS QUE FUERON REGISTRADAS PARA EL DÍA ACTUAL -->
-        <asp:DataList ID="dlAtencionMedica" runat="server" CssClass="table table-striped" RepeatColumns="1" OnItemCommand="dlAtencionMedica_ItemCommand" >
+        <asp:DataList ID="dlAtencionMedica" runat="server" CssClass="table table-striped" RepeatColumns="1" OnItemCommand="dlAtencionMedica_ItemCommand">
             <ItemTemplate>
                 <table>
                     <tr>
@@ -21,6 +21,7 @@
                         <td>
                             <strong>&nbsp;&nbsp;ID Cita:</strong>
                             <asp:Label ID="lblIdCita" runat="server" Text='<%#Eval("IdCita") %>' Font-Size="Medium"></asp:Label><br />
+                            <asp:HiddenField ID="hdIdCita" runat="server" Value='<%#Eval("IdCita") %>' Visible="false" />
                             <strong>&nbsp;&nbsp;Nombres:</strong>
                             <asp:Label ID="lblNombres" runat="server" Text='<%#Eval("Paciente.Nombres") %>' Font-Size="Medium"></asp:Label><br />
                             <strong>&nbsp;&nbsp;Apellido Paterno:</strong>

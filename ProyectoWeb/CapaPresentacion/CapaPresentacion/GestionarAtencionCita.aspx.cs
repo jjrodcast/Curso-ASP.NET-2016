@@ -11,7 +11,12 @@ namespace CapaPresentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Int32 IdCita = Convert.ToInt32(Request.QueryString["idcita"]);
+            }
 
+            // Registro de la atención de la Cita.
         }
     }
 }
