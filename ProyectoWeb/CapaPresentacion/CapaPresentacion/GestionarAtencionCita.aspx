@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="AtencionCita.aspx.cs" Inherits="CapaPresentacion.AtencionCita" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="GestionarAtencionCita.aspx.cs" Inherits="CapaPresentacion.GestionarAtencionCita" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -16,23 +16,22 @@
             <div class="col-sm-5 invoice-col">
                 <br />
                 <strong>Nombres:</strong>
-                <asp:Label ID="lblNombres" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lblNombres" runat="server"></asp:Label>
                 <br />
                 <strong>Apellidos:</strong>
-                <asp:Label ID="lblApellidos" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lblApellidos" runat="server"></asp:Label>
                 <br />
                 <strong>Edad:</strong>
-                <asp:Label ID="lblEdad" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lblEdad" runat="server"></asp:Label>
                 <br />
                 <strong>Sexo:</strong>
-                <asp:Label ID="lblSexo" runat="server" Text=""></asp:Label>
-                <br />
+                <asp:Label ID="lblSexo" runat="server"></asp:Label>
             </div>
             <div class="col-sm-4 invoice-col">
                 <br />
                 <strong>Observaciones</strong>
                 <br />
-                <asp:TextBox ID="txtObservaciones" runat="server" Width="100%" Height="150px" TextMode="MultiLine"></asp:TextBox>
+                <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" Width="100%" Height="150px"></asp:TextBox>
             </div>
         </div>
         <div class="row">
@@ -41,13 +40,13 @@
                 <br />
                 <strong>Diagnóstico</strong>
                 <br />
-                <asp:TextBox ID="txtDiagnostico" runat="server" Width="100%" Height="90px" TextMode="MultiLine"></asp:TextBox>
+                <asp:TextBox ID="txtDiagnostico" runat="server" TextMode="MultiLine" Width="100%" Height="100px"></asp:TextBox>
             </div>
             <div class="invoice-info">
                 <div class="center-block">
                     <div class="col-sm-12 invoice-col">
                         <br />
-                        <asp:Button ID="btnRegistrar" runat="server" CssClass="btn btn-block btn-primary" Text="Registrar" />
+                        <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-block btn-primary" />
                         <br />
                     </div>
                 </div>

@@ -66,7 +66,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AtencionCita.aspx" />
     <Content Include="css\AdminLTE.css" />
     <Content Include="css\bootstrap-slider\slider.css" />
     <Content Include="css\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
@@ -222,6 +221,7 @@
     <Content Include="css\timepicker\bootstrap-timepicker.css" />
     <Content Include="css\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GestionarAtencionCita.aspx" />
     <Content Include="GestionarAtencionPaciente.aspx" />
     <Content Include="GestionarHorarioAtencion.aspx" />
     <Content Include="GestionarPaciente.aspx" />
@@ -404,18 +404,18 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AtencionCita.aspx.cs">
-      <DependentUpon>AtencionCita.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AtencionCita.aspx.designer.cs">
-      <DependentUpon>AtencionCita.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Custom\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Custom\CustomMembershipProvider.cs" />
     <Compile Include="Custom\SessionManager.cs" />
+    <Compile Include="GestionarAtencionCita.aspx.cs">
+      <DependentUpon>GestionarAtencionCita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarAtencionCita.aspx.designer.cs">
+      <DependentUpon>GestionarAtencionCita.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionarAtencionPaciente.aspx.cs">
       <DependentUpon>GestionarAtencionPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -10,7 +10,7 @@
 namespace CapaPresentacion {
     
     
-    public partial class AtencionCita {
+    public partial class GestionarAtencionCita {
         
         /// <summary>
         /// Control imgPaciente.

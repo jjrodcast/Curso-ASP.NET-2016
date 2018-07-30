@@ -157,12 +157,6 @@
                             <span>Anteción de Citas</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="AtencionCita.aspx">
-                            <i class="fa fa-th"></i>
-                            <span>Anteción de Citas</span>
-                        </a>
-                    </li>
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-th"></i>
