@@ -33,16 +33,39 @@ namespace CapaPresentacion
 
         protected void dlAtencionMedica_ItemCommand(object source, DataListCommandEventArgs e)
         {
+            String IdCita = (e.Item.FindControl("hdIdCita") as HiddenField).Value;
+
             if (e.CommandName == COMMAND_REGISTER)
             {
                 // realizar el registro de la atención
                 // Redirección a la página de GestionarAtencionCita.aspx
-                String IdCita = (e.Item.FindControl("hdIdCita") as HiddenField).Value;
-                Response.Redirect("GestionarAtencionCita.aspx?idcita=" + IdCita);
+                bool response = CitaLN.getInstance().ActualizarCita(Convert.ToInt32(IdCita), "A");
+
+                if (response)
+                {
+                    Response.Redirect("GestionarAtencionCita.aspx?idcita=" + IdCita);
+                }
+                else
+                {
+                    Response.Write("<script>alert('NO SE PUEDE REALIZAR LA ATENCIÓN DE LA CITA.')</script>");
+                }
+
+
             }
             else if (e.CommandName == COMMAND_CANCEL)
             {
                 // realizar la cancelación de la reserva de cita
+                bool response = CitaLN.getInstance().ActualizarCita(Convert.ToInt32(IdCita), "E");
+
+                if (response)
+                {
+                    // recargar la información
+                    llenarDataList();
+                }
+                else
+                {
+                    Response.Write("<script>alert('NO SE PUEDE ELIMINAR LA CITA.')</script>");
+                }
             }
         }
     }

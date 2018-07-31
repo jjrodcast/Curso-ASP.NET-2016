@@ -46,5 +46,17 @@ namespace CapaLogicaNegocio
                 throw;
             }
         }
+
+        public bool ActualizarCita(Int32 idCita, string estado)
+        {
+            try
+            {
+                return CitaDAO.getInstance().ActualizarCita(idCita, estado);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

@@ -103,5 +103,38 @@ namespace CapaAccesoDatos
 
             return ListaCitas;
         }
+
+        public bool ActualizarCita(Int32 idCita, string estado)
+        {
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+            bool response = false;
+
+            try
+            {
+                con = Conexion.getInstance().ConexionBD();
+                cmd = new SqlCommand("spActualizarEstadoCita", con);
+                cmd.Parameters.AddWithValue("@prmIdCita", idCita);
+                cmd.Parameters.AddWithValue("@prmEstado", estado);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                con.Open();
+
+                // Ejecutar el procedimiento almacenado
+                cmd.ExecuteNonQuery();
+
+                response = true;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return response;
+        }
     }
 }
