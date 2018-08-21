@@ -19,7 +19,19 @@ namespace CapaPresentacion
             if (!Page.IsPostBack)
             {
                 // Page.ClientScript.RegisterClientScriptInclude("pacientejs", "js/paciente.js");
+                LlenarListaSexo();
             }
+        }
+
+        // Bonus 2:
+        private void LlenarListaSexo()
+        {
+            //var ListaSexo = PacienteLN.getInstance().ListarSexo();
+            List<Sexo> ListaSexo = PacienteLN.getInstance().ListarSexo();
+            ddlSexo.DataSource = ListaSexo;
+            ddlSexo.DataTextField = "nombre";
+            ddlSexo.DataValueField = "idSexo";
+            ddlSexo.DataBind();
         }
 
         [WebMethod]

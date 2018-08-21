@@ -14,10 +14,15 @@ namespace CapaPresentacion
         {
             if (!IsPostBack)
             {
-                if (Session["objEmpleado"] != null)
+                //if (Session["UserSession"] != null)
+                //{
+                //    txtUser.Text = (String)Session["UserSession"];
+                //}
+                if (Session["UserSessionObjeto"] != null)
                 {
-                    Empleado objEmpeado = (Empleado)Session["objEmpleado"];
-                    txtUser.Text = objEmpeado.Nombre;
+                    Empleado objEmpleado = (Empleado)Session["UserSessionObjeto"];
+
+                    txtUser.Text = objEmpleado.Nombre;
                 }
             }
         }

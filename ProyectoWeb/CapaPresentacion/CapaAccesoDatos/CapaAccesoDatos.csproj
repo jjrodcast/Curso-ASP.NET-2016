@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CitaDAO.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="DiagnosticoDAO.cs" />
     <Compile Include="EmpleadoDAO.cs" />
     <Compile Include="EspecialidadDAO.cs" />
     <Compile Include="HorarioAtencionDAO.cs" />

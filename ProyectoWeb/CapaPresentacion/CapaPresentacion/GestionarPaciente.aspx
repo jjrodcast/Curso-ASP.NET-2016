@@ -46,8 +46,6 @@
                         </div>
                         <div class="form-group">
                             <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control">
-                                <asp:ListItem>Masculino</asp:ListItem>
-                                <asp:ListItem>Femenino</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <div class="form-group">

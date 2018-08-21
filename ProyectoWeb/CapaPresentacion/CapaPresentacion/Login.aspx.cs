@@ -32,7 +32,9 @@ namespace CapaPresentacion
                 if (objEmpleado != null)
                 {
                     SessionManager = new SessionManager(Session);
-                    SessionManager.UserSession = objEmpleado.ID.ToString();
+                    // Bonus 1:
+                    //SessionManager.UserSession = objEmpleado.Nombre.ToString();
+                    SessionManager.UserSessionObjeto = objEmpleado;
 
                     //Response.Redirect("PanelGeneral.aspx");
                     FormsAuthentication.RedirectFromLoginPage(LoginUser.UserName, false);

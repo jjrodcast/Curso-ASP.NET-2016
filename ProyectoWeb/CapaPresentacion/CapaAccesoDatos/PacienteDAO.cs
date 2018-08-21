@@ -76,7 +76,7 @@ namespace CapaAccesoDatos
                 con.Open();
                 dr = cmd.ExecuteReader();
 
-                while(dr.Read())
+                while (dr.Read())
                 {
                     // Crear objetos de tipo Paciente
                     Paciente objPaciente = new Paciente();
@@ -172,7 +172,7 @@ namespace CapaAccesoDatos
             SqlConnection conex = null;
             SqlCommand cmd = null;
             SqlDataReader dr = null;
-            Paciente objPaciente = null; 
+            Paciente objPaciente = null;
 
             try
             {
@@ -184,7 +184,7 @@ namespace CapaAccesoDatos
                 conex.Open();
                 dr = cmd.ExecuteReader();
 
-                if(dr.Read())
+                if (dr.Read())
                 {
                     objPaciente = new Paciente
                     {
@@ -198,7 +198,7 @@ namespace CapaAccesoDatos
                     };
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 objPaciente = null;
                 throw ex;
@@ -208,6 +208,88 @@ namespace CapaAccesoDatos
                 conex.Close();
             }
             return objPaciente;
+        }
+
+        public Paciente BuscarPacienteIdCita(Int32 idCita)
+        {
+            SqlConnection conex = null;
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            Paciente objPaciente = null;
+
+            try
+            {
+                conex = Conexion.getInstance().ConexionBD();
+                cmd = new SqlCommand("spBuscarPacienteIdCita", conex);
+                cmd.Parameters.AddWithValue("@prmIdCita", idCita);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                conex.Open();
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    objPaciente = new Paciente
+                    {
+                        IdPaciente = Convert.ToInt32(dr["idPaciente"].ToString()),
+                        Nombres = dr["Nombres"].ToString(),
+                        ApPaterno = dr["ApPaterno"].ToString(),
+                        ApMaterno = dr["ApMaterno"].ToString(),
+                        Edad = Convert.ToInt32(dr["Edad"].ToString()),
+                        Sexo = Convert.ToChar(dr["Sexo"].ToString())
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                objPaciente = null;
+                throw ex;
+            }
+            finally
+            {
+                conex.Close();
+            }
+            return objPaciente;
+        }
+
+        // Bonus 2:
+        public List<Sexo> ListarSexo()
+        {
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            List<Sexo> Lista = new List<Sexo>();
+
+            try
+            {
+                con = Conexion.getInstance().ConexionBD();
+                cmd = new SqlCommand("spListarSexo", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                con.Open();
+
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Sexo objSexo = new Sexo();
+                    objSexo.IdSexo = dr["idSexo"].ToString();
+                    objSexo.Nombre = dr["nombre"].ToString();
+
+                    Lista.Add(objSexo);
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return Lista;
         }
     }
 }

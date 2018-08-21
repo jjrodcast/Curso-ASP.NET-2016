@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.SessionState;
+using CapaEntidades;
 
 namespace CapaPresentacion.Custom
 {
@@ -27,6 +28,12 @@ namespace CapaPresentacion.Custom
         {
             set { CurrentSession["UserSession"] = value; }
             get { return (string)CurrentSession["UserSession"]; }
+        }
+
+        public Empleado UserSessionObjeto
+        {
+            set { CurrentSession["UserSessionObjeto"] = value; }
+            get { return (Empleado)CurrentSession["UserSessionObjeto"]; }
         }
         #endregion
     }

@@ -82,5 +82,30 @@ namespace CapaLogicaNegocio
                 throw ex;
             }
         }
+
+        public Paciente BuscarPacienteIdCita(Int32 IdCita)
+        {
+            try
+            {
+                return PacienteDAO.getInstance().BuscarPacienteIdCita(IdCita);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        // Bonus 2:
+        public List<Sexo> ListarSexo()
+        {
+            try 
+            {
+                return PacienteDAO.getInstance().ListarSexo();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
