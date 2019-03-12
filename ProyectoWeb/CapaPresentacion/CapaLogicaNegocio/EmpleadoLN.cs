@@ -35,5 +35,17 @@ namespace CapaLogicaNegocio
             }
         }
 
+        public Empleado BuscarEmpleado(String nroDocumento)
+        {
+            try 
+            {
+                return EmpleadoDAO.getInstance().BuscarEmpleado(nroDocumento);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
     }
 }

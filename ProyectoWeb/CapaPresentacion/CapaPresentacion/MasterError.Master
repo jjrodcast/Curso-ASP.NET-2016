@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterError.master.cs" Inherits="CapaPresentacion.MasterError" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="content-language" content="es" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sistema de Clinica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        html, body {
+            min-height: 100%;
+            padding: 0;
+            margin: 0;
+            font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .container-fluid {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="skin-blue">
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+        <section class="content-header">
+            <form id="form1" runat="server">
+                <div>
+                    <asp:ContentPlaceHolder ID="contentBody" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/AdminLTE/app.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

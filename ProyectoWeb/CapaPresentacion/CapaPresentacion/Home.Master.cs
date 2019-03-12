@@ -5,24 +5,23 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaEntidades;
+using CapaLogicaNegocio;
+using System.Web.Services;
 
 namespace CapaPresentacion
 {
     public partial class Home : System.Web.UI.MasterPage
     {
+        List<Permiso> ListaPermisos = new List<Permiso>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                //if (Session["UserSession"] != null)
-                //{
-                //    txtUser.Text = (String)Session["UserSession"];
-                //}
-                if (Session["UserSessionObjeto"] != null)
+                if (Session["UserSessionEmpleado"] != null)
                 {
-                    Empleado objEmpleado = (Empleado)Session["UserSessionObjeto"];
-
-                    txtUser.Text = objEmpleado.Nombre;
+                    Empleado objEmpeado = (Empleado)Session["UserSessionEmpleado"];
+                    txtUser.Text = objEmpeado.Nombre;
                 }
             }
         }

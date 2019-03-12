@@ -19,8 +19,27 @@ namespace CapaEntidades
         public String Telefono { get; set; }
         public bool Estado { get; set; }
         public String Imagen { get; set; }
+        public HistoriaClinica PHistoriaClinica { get; set; }
 
-        public Paciente() { }
+
+        public Paciente() : this(0,"", "", "", 0, ' ', "", "", "", false, "", new HistoriaClinica()) { }
+
+
+        public Paciente(int _IdPaciente, String _Nombres, String _ApPaterno, String _ApMaterno, int _Edad, char _Sexo
+            , String _NroDocumento, String _Direccion, String _Telefono, bool _Estado, String _Imagen, HistoriaClinica _PHistoriaClinica)
+        {
+
+            this.IdPaciente = _IdPaciente;
+            this.Nombres = _Nombres;
+            this.ApPaterno = _ApPaterno;
+            this.ApMaterno = _ApMaterno;
+            this.Edad = _Edad;
+            this.Sexo = _Sexo;
+            this.NroDocumento = _NroDocumento;
+            this.Direccion = _Direccion;
+            this.Imagen = _Imagen;
+            this.PHistoriaClinica = _PHistoriaClinica;
+        }
 
     }
 }

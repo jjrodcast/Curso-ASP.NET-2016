@@ -34,7 +34,7 @@ namespace CapaAccesoDatos
                 con = Conexion.getInstance().ConexionBD();
                 cmd = new SqlCommand("spRegistrarDiagnostico", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@prmIdPaciente", objDiagnostico.HistoriaClinica.Paciente.IdPaciente);
+                cmd.Parameters.AddWithValue("@prmIdPaciente", objDiagnostico.HistoriaClinica.IDPaciente);
                 cmd.Parameters.AddWithValue("@prmObservacion", objDiagnostico.Observacion);
                 cmd.Parameters.AddWithValue("@prmDiagnostico", objDiagnostico.SDiagnostico);
 

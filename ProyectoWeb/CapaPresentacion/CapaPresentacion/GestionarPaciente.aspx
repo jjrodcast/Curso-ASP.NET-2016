@@ -46,6 +46,8 @@
                         </div>
                         <div class="form-group">
                             <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control">
+                                <asp:ListItem>Masculino</asp:ListItem>
+                                <asp:ListItem>Femenino</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <div class="form-group">
@@ -94,7 +96,7 @@
                         <h3 class="box-title">Lista de Pacientes</h3>
                     </div>
                     <div class="box-body table-responsive">
-                        <table id="tbl_pacientes" class="table table-bordered table-hover">
+                        <table id="tbl_pacientes" class="table table-bordered table-hover text-center">
                             <thead>
                                 <tr>
                                     <th>Código</th>

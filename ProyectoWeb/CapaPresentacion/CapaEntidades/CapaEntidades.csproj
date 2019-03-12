@@ -47,9 +47,10 @@
     <Compile Include="Hora.cs" />
     <Compile Include="HorarioAtencion.cs" />
     <Compile Include="Medico.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Paciente.cs" />
+    <Compile Include="Permiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sexo.cs" />
     <Compile Include="TipoEmpleado.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

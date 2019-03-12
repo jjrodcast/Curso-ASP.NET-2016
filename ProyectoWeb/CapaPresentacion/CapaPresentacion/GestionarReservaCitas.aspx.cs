@@ -7,10 +7,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaEntidades;
 using CapaLogicaNegocio;
+using CapaPresentacion.Custom;
 
 namespace CapaPresentacion
 {
-    public partial class GestionarReservaCitas : System.Web.UI.Page
+    public partial class GestionarReservaCitas : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -123,7 +124,6 @@ namespace CapaPresentacion
              }
             return objCita;
         }
-
 
     }
 }

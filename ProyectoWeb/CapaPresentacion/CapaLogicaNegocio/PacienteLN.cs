@@ -94,18 +94,5 @@ namespace CapaLogicaNegocio
                 throw;
             }
         }
-
-        // Bonus 2:
-        public List<Sexo> ListarSexo()
-        {
-            try 
-            {
-                return PacienteDAO.getInstance().ListarSexo();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

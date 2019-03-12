@@ -24,6 +24,7 @@ function addRowDT(data) {
     tabla = $("#tbl_pacientes").DataTable({
         "aaSorting": [[0, 'desc']],
         "bSort": true,
+        "bDestroy": true,
         "aoColumns": [
             null,
             null,
@@ -119,7 +120,7 @@ $(document).on('click', '.btn-edit', function (e) {
     e.preventDefault();
 
     var row = $(this).parent().parent()[0];
-    data = tabla.fnGetData(row);
+    data = tabla.fillModalData(row);
     fillModalData();
 
 });

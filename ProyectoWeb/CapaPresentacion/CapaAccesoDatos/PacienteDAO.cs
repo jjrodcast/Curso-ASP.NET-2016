@@ -252,44 +252,5 @@ namespace CapaAccesoDatos
             return objPaciente;
         }
 
-        // Bonus 2:
-        public List<Sexo> ListarSexo()
-        {
-            SqlConnection con = null;
-            SqlCommand cmd = null;
-            SqlDataReader dr = null;
-            List<Sexo> Lista = new List<Sexo>();
-
-            try
-            {
-                con = Conexion.getInstance().ConexionBD();
-                cmd = new SqlCommand("spListarSexo", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                con.Open();
-
-                dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    Sexo objSexo = new Sexo();
-                    objSexo.IdSexo = dr["idSexo"].ToString();
-                    objSexo.Nombre = dr["nombre"].ToString();
-
-                    Lista.Add(objSexo);
-                }
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                con.Close();
-            }
-
-            return Lista;
-        }
     }
 }

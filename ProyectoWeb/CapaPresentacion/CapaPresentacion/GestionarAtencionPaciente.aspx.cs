@@ -6,10 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaEntidades;
 using CapaLogicaNegocio;
+using CapaPresentacion.Custom;
+using System.Web.Services;
 
 namespace CapaPresentacion
 {
-    public partial class GestionarAtencionPaciente : System.Web.UI.Page
+    public partial class GestionarAtencionPaciente : BasePage
     {
         private static String COMMAND_REGISTER = "Registrar";
         private static String COMMAND_CANCEL = "Cancelar";

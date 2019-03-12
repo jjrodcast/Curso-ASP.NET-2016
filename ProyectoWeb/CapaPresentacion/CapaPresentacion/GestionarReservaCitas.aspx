@@ -138,7 +138,7 @@
 
             </section>
             <%--<input id="idPaciente" type="hidden"  />--%>
-            <asp:HiddenField ID="idPaciente" runat="server" />
+            <asp:HiddenField ID="idPaciente" runat="server" Visible="false" />
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>

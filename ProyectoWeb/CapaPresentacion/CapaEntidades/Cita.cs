@@ -17,10 +17,20 @@ namespace CapaEntidades
         public string Hora { get; set; }
         //public Hora EHora { get; set; }
 
-        public Cita()
+        public Cita() : this(0,new Medico(), new Paciente(), DateTime.Now, "", ' ', "")
         {
-            this.Paciente = new Paciente();
-            this.Medico = new Medico();
+        }
+
+        public Cita(int _IdCita, Medico _Medico, Paciente _Paciente, DateTime _FechaReserva, string _Observacion
+            , char _Estado, string _Hora)
+        {
+            this.IdCita = _IdCita;
+            this.Medico = _Medico;
+            this.Paciente = _Paciente;
+            this.FechaReserva = _FechaReserva;
+            this.Observacion = _Observacion;
+            this.Estado = _Estado;
+            this.Hora = _Hora;
         }
 
     }

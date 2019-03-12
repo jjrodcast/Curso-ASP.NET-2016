@@ -6,10 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaEntidades;
 using CapaLogicaNegocio;
+using CapaPresentacion.Custom;
+using System.Web.Services;
 
 namespace CapaPresentacion
 {
-    public partial class GestionarAtencionCita : System.Web.UI.Page
+    public partial class GestionarAtencionCita : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,7 +37,7 @@ namespace CapaPresentacion
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             Diagnostico objDiagnostico = new Diagnostico();
-            objDiagnostico.HistoriaClinica.Paciente.IdPaciente = Convert.ToInt32(hfIdPaciente.Value);
+            objDiagnostico.HistoriaClinica.IDPaciente = Convert.ToInt32(hfIdPaciente.Value);
             objDiagnostico.Observacion = txtObservaciones.Text;
             objDiagnostico.SDiagnostico = txtDiagnostico.Text;
 

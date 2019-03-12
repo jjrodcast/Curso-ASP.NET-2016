@@ -101,11 +101,20 @@
             margin-top: 10px;
             cursor: pointer;
         }
+
+        #close {
+            cursor: pointer;
+        }
+
+        #no-cursor {
+            cursor: none;
+        }
     </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body class="skin-blue">
+    <%--<form id="form1" runat="server" class="skin-blue">--%>
     <header class="header">
         <!-- BEGIN CABECERA -->
         <a href="#" class="logo">SisClinica-2015</a>
@@ -116,6 +125,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu no-cursor">
+                        <a>
+                            <i class="glyphicon glyphicon-user"></i>
+                            <span id="close">Cerrar Sesión</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
         <!-- END CABECERA-->
     </header>
@@ -124,52 +143,71 @@
             <section class="sidebar">
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="img/user.jpg" class="img-circle" alt="User Image" />
+                        <img src="img/avatar5.png" class="img-circle" alt="User Image" />
                     </div>
                     <div class="pull-left info">
                         <p>
-                            Bienvenido sr(a)<br /><asp:Label runat="server" ID="txtUser"></asp:Label>
+                            Bienvenido sr(a)
+                        </p>
+                        <p>
+                            <asp:Label runat="server" ID="txtUser"></asp:Label>
                         </p>
                     </div>
                 </div>
                 <ul class="sidebar-menu">
-                    <li class="active">
-                        <a href="#">
-                            <i class="fa fa-dashboard"></i>
-                            <span>Panel General</span>
-                        </a>
-                    </li>
+                    <% if (Session["UserSessionEmpleado"] != null)
+                       {
+                           var objEmpleado = (CapaEntidades.Empleado)Session["UserSessionEmpleado"];
+
+                           var DMenu = CapaLogicaNegocio.MenuLN.getInstance().ListarMenuPorEmpleado(objEmpleado.ID);
+                           Session["Permisos"] = DMenu;
+                           foreach (CapaEntidades.Menu menu in DMenu.PMenu)
+                           {
+                               if (menu.Estado)
+                               {
+                                   if (menu.SubMenu.Count == 0)
+                                   {  
+                    %>
                     <li>
-                        <a href="GestionarPaciente.aspx">
+                        <a href='<%=menu.Url%>'>
                             <i class="fa fa-th"></i>
-                            <span>Registro de Pacientes</span>
+                            <span><%= menu.Nombre %></span>
                         </a>
                     </li>
-                    <li>
-                        <a href="GestionarReservaCitas.aspx">
-                            <i class="fa fa-th"></i>
-                            <span>Reserva de Citas</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="GestionarAtencionPaciente.aspx">
-                            <i class="fa fa-th"></i>
-                            <span>Anteción de Citas</span>
-                        </a>
-                    </li>
+                    <%
+                                   }
+                                   else
+                                   {
+                    %>
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-th"></i>
-                            <span>Horarios</span>
+                            <span><%= menu.Nombre %></span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li>
-                                <a href="GestionarHorarioAtencion.aspx"><i class="fa fa-angle-double-right"></i>Horarios Médicos</a>
+                            <%
+                        foreach (CapaEntidades.Menu submenu in menu.SubMenu)
+                        {
+                            if (submenu.Estado && submenu.Show)
+                            {
+                                            
+                            %><li>
+                                <a href='<%=submenu.Url%>'><i class="fa fa-angle-double-right"></i><%=submenu.Nombre%></a>
                             </li>
+                            <%
+                                   
+                                               }
+                                           }    
+                            %>
                         </ul>
                     </li>
-
+                    <%
+                    }
+                               }
+                           }
+                       }    
+                    %>
                 </ul>
             </section>
         </aside>
@@ -192,6 +230,7 @@
             </section>
         </aside>
     </div>
+    <%--</form>--%>
     <!-- FIN DEL WRAPPER -->
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
@@ -202,6 +241,7 @@
 
     <script src="js/plugins/datatables/jquery.dataTables.js"></script>
     <script src="js/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="js/logout.js"></script>
     <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>

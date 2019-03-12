@@ -8,10 +8,11 @@ using System.Web.UI.WebControls;
 using System.Web.Script.Serialization;
 using CapaEntidades;
 using CapaLogicaNegocio;
+using CapaPresentacion.Custom;
 
 namespace CapaPresentacion
 {
-    public partial class GestionarHorarioAtencion : System.Web.UI.Page
+    public partial class GestionarHorarioAtencion : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -83,6 +84,5 @@ namespace CapaPresentacion
 
             return HorarioAtencionLN.getInstance().Editar(objHorario);
         }
-
     }
 }

@@ -8,30 +8,19 @@ using CapaEntidades;
 using CapaLogicaNegocio;
 using System.Web.Services;
 using System.Web.Script.Serialization;
+using CapaPresentacion.Custom;
 
 
 namespace CapaPresentacion
 {
-    public partial class frmGestionarPaciente : System.Web.UI.Page
+    public partial class frmGestionarPaciente : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
                 // Page.ClientScript.RegisterClientScriptInclude("pacientejs", "js/paciente.js");
-                LlenarListaSexo();
             }
-        }
-
-        // Bonus 2:
-        private void LlenarListaSexo()
-        {
-            //var ListaSexo = PacienteLN.getInstance().ListarSexo();
-            List<Sexo> ListaSexo = PacienteLN.getInstance().ListarSexo();
-            ddlSexo.DataSource = ListaSexo;
-            ddlSexo.DataTextField = "nombre";
-            ddlSexo.DataValueField = "idSexo";
-            ddlSexo.DataBind();
         }
 
         [WebMethod]
@@ -96,7 +85,7 @@ namespace CapaPresentacion
             Paciente objPaciente = GetEntity();
             // enviar a la capa de logica de negocio
             bool response = PacienteLN.getInstance().RegistrarPaciente(objPaciente);
-            if (response == true)
+            if (response)
             {
                 Response.Write("<script>alert('REGISTRO CORRECTO.')</script>");
 

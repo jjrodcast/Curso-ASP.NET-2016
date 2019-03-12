@@ -39,14 +39,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MongoDB.Bson">
-      <HintPath>..\packages\MongoDB.Bson.2.2.1\lib\net45\MongoDB.Bson.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="MongoDB.Driver">
-      <HintPath>..\packages\MongoDB.Driver.2.2.1\lib\net45\MongoDB.Driver.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="MongoDB.Driver.Core">
-      <HintPath>..\packages\MongoDB.Driver.Core.2.2.1\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicosoftReportViewerWebForms_v11.1.0.1\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -66,6 +69,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BadRequest.aspx" />
     <Content Include="css\AdminLTE.css" />
     <Content Include="css\bootstrap-slider\slider.css" />
     <Content Include="css\bootstrap-wysihtml5\bootstrap3-wysihtml5.css" />
@@ -220,11 +224,14 @@
     <Content Include="css\morris\morris.css" />
     <Content Include="css\timepicker\bootstrap-timepicker.css" />
     <Content Include="css\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="ErrorPage.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="GestionarAtencionCita.aspx" />
     <Content Include="GestionarAtencionPaciente.aspx" />
     <Content Include="GestionarHorarioAtencion.aspx" />
+    <Content Include="GestionarMenus.aspx" />
     <Content Include="GestionarPaciente.aspx" />
+    <Content Include="GestionarPermisos.aspx" />
     <Content Include="GestionarReservaCitas.aspx" />
     <Content Include="img\ajax-loader.gif" />
     <Content Include="img\ajax-loader1.gif" />
@@ -273,7 +280,9 @@
     <Content Include="js\jquery-ui.min.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery.ui.draggable.js" />
+    <Content Include="js\logout.js" />
     <Content Include="js\paciente.js" />
+    <Content Include="js\menus.js" />
     <Content Include="js\plugins\bootstrap-slider\bootstrap-slider.js" />
     <Content Include="js\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
     <Content Include="js\plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.js" />
@@ -404,11 +413,25 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BadRequest.aspx.cs">
+      <DependentUpon>BadRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BadRequest.aspx.designer.cs">
+      <DependentUpon>BadRequest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Custom\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Custom\CustomMembershipProvider.cs" />
     <Compile Include="Custom\SessionManager.cs" />
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionarAtencionCita.aspx.cs">
       <DependentUpon>GestionarAtencionCita.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -430,12 +453,26 @@
     <Compile Include="GestionarHorarioAtencion.aspx.designer.cs">
       <DependentUpon>GestionarHorarioAtencion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GestionarMenus.aspx.cs">
+      <DependentUpon>GestionarMenus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarMenus.aspx.designer.cs">
+      <DependentUpon>GestionarMenus.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionarPaciente.aspx.cs">
       <DependentUpon>GestionarPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GestionarPaciente.aspx.designer.cs">
       <DependentUpon>GestionarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarPermisos.aspx.cs">
+      <DependentUpon>GestionarPermisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarPermisos.aspx.designer.cs">
+      <DependentUpon>GestionarPermisos.aspx</DependentUpon>
     </Compile>
     <Compile Include="GestionarReservaCitas.aspx.cs">
       <DependentUpon>GestionarReservaCitas.aspx</DependentUpon>
@@ -457,6 +494,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterError.Master.cs">
+      <DependentUpon>MasterError.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterError.Master.designer.cs">
+      <DependentUpon>MasterError.Master</DependentUpon>
     </Compile>
     <Compile Include="PanelGeneral.aspx.cs">
       <DependentUpon>PanelGeneral.aspx</DependentUpon>
@@ -482,6 +526,7 @@
     <Content Include="img\Thumbs.db" />
     <Content Include="Home.Master" />
     <Content Include="packages.config" />
+    <Content Include="MasterError.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -498,9 +543,6 @@
       <Project>{6d2c8443-802e-4ef0-b55c-394579fc6ca0}</Project>
       <Name>CapaLogicaNegocio</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

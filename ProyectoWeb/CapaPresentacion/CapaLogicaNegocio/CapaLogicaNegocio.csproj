@@ -45,8 +45,11 @@
     <Compile Include="EspecialidadLN.cs" />
     <Compile Include="HorarioAtencionLN.cs" />
     <Compile Include="MedicoLN.cs" />
+    <Compile Include="MenuLN.cs" />
     <Compile Include="PacienteLN.cs" />
+    <Compile Include="PermisoLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteLN.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaAccesoDatos\CapaAccesoDatos.csproj">

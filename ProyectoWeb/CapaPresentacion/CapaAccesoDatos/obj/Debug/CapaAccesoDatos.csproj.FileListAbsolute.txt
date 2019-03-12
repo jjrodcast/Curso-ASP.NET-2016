@@ -1,14 +1,7 @@
-C:\Users\JorgePC\Desktop\CapaPresentacion\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.csprojResolveAssemblyReference.cache
 C:\Users\JorgePC\Desktop\CapaPresentacion\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.dll
 C:\Users\JorgePC\Desktop\CapaPresentacion\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.pdb
 C:\Users\JorgePC\Desktop\CapaPresentacion\CapaAccesoDatos\bin\Debug\CapaEntidades.dll
 C:\Users\JorgePC\Desktop\CapaPresentacion\CapaAccesoDatos\bin\Debug\CapaEntidades.pdb
+C:\Users\JorgePC\Desktop\CapaPresentacion\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.csprojResolveAssemblyReference.cache
 C:\Users\JorgePC\Desktop\CapaPresentacion\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.dll
 C:\Users\JorgePC\Desktop\CapaPresentacion\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.pdb
-C:\Users\JorgePC\Documents\GitHub\PROYECTO-CURSO-ASP-NET-2016\Curso-ASP.NET-2016\ProyectoWeb\CapaPresentacion\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.dll
-C:\Users\JorgePC\Documents\GitHub\PROYECTO-CURSO-ASP-NET-2016\Curso-ASP.NET-2016\ProyectoWeb\CapaPresentacion\CapaAccesoDatos\bin\Debug\CapaAccesoDatos.pdb
-C:\Users\JorgePC\Documents\GitHub\PROYECTO-CURSO-ASP-NET-2016\Curso-ASP.NET-2016\ProyectoWeb\CapaPresentacion\CapaAccesoDatos\bin\Debug\CapaEntidades.dll
-C:\Users\JorgePC\Documents\GitHub\PROYECTO-CURSO-ASP-NET-2016\Curso-ASP.NET-2016\ProyectoWeb\CapaPresentacion\CapaAccesoDatos\bin\Debug\CapaEntidades.pdb
-C:\Users\JorgePC\Documents\GitHub\PROYECTO-CURSO-ASP-NET-2016\Curso-ASP.NET-2016\ProyectoWeb\CapaPresentacion\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.csprojResolveAssemblyReference.cache
-C:\Users\JorgePC\Documents\GitHub\PROYECTO-CURSO-ASP-NET-2016\Curso-ASP.NET-2016\ProyectoWeb\CapaPresentacion\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.dll
-C:\Users\JorgePC\Documents\GitHub\PROYECTO-CURSO-ASP-NET-2016\Curso-ASP.NET-2016\ProyectoWeb\CapaPresentacion\CapaAccesoDatos\obj\Debug\CapaAccesoDatos.pdb

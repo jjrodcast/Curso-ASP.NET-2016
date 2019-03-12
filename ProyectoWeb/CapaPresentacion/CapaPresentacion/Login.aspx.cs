@@ -11,13 +11,13 @@ using CapaPresentacion.Custom;
 
 namespace CapaPresentacion
 {
-    public partial class Login : BasePage
+    public partial class Login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                Session["UserSession"] = null;
+                Session["UserSessionId"] = null;
             }
         }
 
@@ -31,12 +31,9 @@ namespace CapaPresentacion
 
                 if (objEmpleado != null)
                 {
-                    SessionManager = new SessionManager(Session);
-                    // Bonus 1:
-                    //SessionManager.UserSession = objEmpleado.Nombre.ToString();
-                    SessionManager.UserSessionObjeto = objEmpleado;
-
-                    //Response.Redirect("PanelGeneral.aspx");
+                    SessionManager _SessionManager = new SessionManager(Session);
+                    //SessionManager.UserSessionId = objEmpleado.ID.ToString();
+                    _SessionManager.UserSessionEmpleado = objEmpleado;
                     FormsAuthentication.RedirectFromLoginPage(LoginUser.UserName, false);
                 }
                 else

@@ -47,8 +47,11 @@
     <Compile Include="EspecialidadDAO.cs" />
     <Compile Include="HorarioAtencionDAO.cs" />
     <Compile Include="MedicoDAO.cs" />
+    <Compile Include="MenuDAO.cs" />
     <Compile Include="PacienteDAO.cs" />
+    <Compile Include="PermisoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">

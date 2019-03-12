@@ -39,7 +39,7 @@ namespace CapaAccesoDatos
                 cmd.Parameters.AddWithValue("@prmPass", pass);
                 conexion.Open();
                 dr = cmd.ExecuteReader();
-                if(dr.Read())
+                if (dr.Read())
                 {
                     objEmpleado = new Empleado();
                     objEmpleado.ID = Convert.ToInt32(dr["idEmpleado"].ToString());
@@ -61,6 +61,47 @@ namespace CapaAccesoDatos
             {
                 conexion.Close();
             }
+            return objEmpleado;
+        }
+
+        public Empleado BuscarEmpleado(String nroDocumento)
+        {
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+            Empleado objEmpleado = new Empleado();
+
+            try
+            {
+                con = Conexion.getInstance().ConexionBD();
+                cmd = new SqlCommand("spBuscarEmpleado", con);
+                cmd.Parameters.AddWithValue("@prmNroDocumento", nroDocumento);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                con.Open();
+
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    objEmpleado.ID = Convert.ToInt32(dr["idEmpleado"].ToString());
+                    objEmpleado.Nombre = dr["nombres"].ToString();
+                    objEmpleado.ApPaterno = dr["apPaterno"].ToString();
+                    objEmpleado.ApMaterno = dr["apMaterno"].ToString();
+                    objEmpleado.NroDocumento = dr["nroDocumento"].ToString();
+                    objEmpleado.RTipoEmpleado.Descripcion = dr["usuario"].ToString();
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                con.Close();
+            }
+
             return objEmpleado;
         }
 
